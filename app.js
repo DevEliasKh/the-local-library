@@ -1,3 +1,4 @@
+require("dotenv").config();
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -18,6 +19,7 @@ const mongoDB = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@clust
 main().catch((err) => console.log(err));
 async function main() {
    await mongoose.connect(mongoDB);
+   console.log("connected");
 }
 
 // view engine setup
